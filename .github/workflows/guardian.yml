@@ -1,0 +1,51 @@
+name: THIN Site Guardian CI & Health Monitor
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  schedule:
+    # Checagem de disponibilidade a cada 6 horas
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  guardian-check:
+    name: Qualidade, Segurança e Monitoramento
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Checagem estrita de tipos (TypeScript)
+        run: npm run lint
+
+      - name: Build de Produção (Vite)
+        run: npm run build
+
+      - name: Executar THIN Site Guardian
+        run: python3 scripts/site_guardian.py
+
+      - name: Publicar Relatório de Saúde
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: thin-health-report
+          path: reports/
+          retention-days: 14

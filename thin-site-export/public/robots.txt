@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://thincorrea0.netlify.app/sitemap.xml

@@ -1,0 +1,8 @@
+{
+  "name": "THIN — Comunicação Visual e Não Verbal",
+  "description": "Comunicação visual e não verbal para negócios locais em São José do Rio Preto e região. Wellington Correa (Thin).",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

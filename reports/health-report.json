@@ -1,0 +1,46 @@
+{
+  "timestamp": "2026-10-29T02:27:39.576009Z",
+  "target_url": "https://thincorrea0.netlify.app/",
+  "overall_status": "SAUDÁVEL",
+  "checks": {
+    "remote_availability": {
+      "status": "PASS",
+      "http_status": 200,
+      "latency_ms": 818,
+      "content_valid": true,
+      "pending_deploy_sync": true,
+      "server": "Unknown",
+      "security_headers": {
+        "Content-Security-Policy": false,
+        "Strict-Transport-Security": false,
+        "X-Frame-Options": false,
+        "X-Content-Type-Options": false
+      }
+    },
+    "assets": {
+      "status": "PASS",
+      "total_images_referenced": 7,
+      "missing_images": [],
+      "oversized_images": [],
+      "whatsapp_links_verified": true,
+      "whatsapp_link_count": 4
+    },
+    "security": {
+      "status": "PASS",
+      "secrets_detected": []
+    },
+    "build": {
+      "status": "PASS",
+      "typescript_clean": true,
+      "vite_build_clean": true,
+      "dist_total_kb": 23123.8
+    }
+  },
+  "metrics": {
+    "response_time_ms": 818
+  },
+  "issues": [],
+  "recommendations": [
+    "O Netlify público ainda não recebeu o deploy das alterações recentes do Laboratório/Método. Sincronize o repositório ou faça o upload manual do zip quando desejar publicar."
+  ]
+}
